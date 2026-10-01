@@ -904,3 +904,563 @@ a {
     }
 
 }
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.page-hero {
+    padding: 150px 0 110px;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero .eyebrow {
+    margin-bottom: 24px;
+}
+
+.page-hero h1 {
+    max-width: 760px;
+    margin: 0 0 28px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+}
+
+.page-hero h1 em {
+    font-style: italic;
+}
+
+.page-hero-description {
+    max-width: 560px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* ABOUT STORY */
+
+.about-story {
+    padding: 120px 0;
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 80px;
+}
+
+.about-story-content {
+    max-width: 720px;
+}
+
+.about-story-content h2,
+.about-philosophy h2,
+.about-future-content h2,
+.about-closing h2 {
+    margin: 0 0 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.about-story-content h2 em,
+.about-philosophy h2 em,
+.about-future-content h2 em,
+.about-closing h2 em {
+    font-style: italic;
+}
+
+.about-story-content p,
+.about-future-content p {
+    max-width: 650px;
+    margin: 0 0 22px;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+
+/* PHILOSOPHY */
+
+.about-philosophy {
+    padding: 140px 0;
+    background: var(--surface);
+}
+
+.about-philosophy .eyebrow {
+    margin-bottom: 28px;
+}
+
+.about-philosophy h2 {
+    max-width: 850px;
+}
+
+.about-philosophy > .container > p:not(.eyebrow) {
+    max-width: 650px;
+    margin: 0 0 22px;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+
+/* FUTURE */
+
+.about-future {
+    padding: 120px 0;
+}
+
+.about-future-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 80px;
+}
+
+.about-future-content {
+    max-width: 720px;
+}
+
+
+/* CLOSING */
+
+.about-closing {
+    padding: 150px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.about-closing h2 {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.about-closing .text-link {
+    display: inline-flex;
+}
+
+
+/* ABOUT MOBILE */
+
+@media (max-width: 800px) {
+
+    .page-hero {
+        padding: 110px 0 80px;
+    }
+
+    .page-hero h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .about-story,
+    .about-future {
+        padding: 90px 0;
+    }
+
+    .about-story-grid,
+    .about-future-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-story-content h2,
+    .about-philosophy h2,
+    .about-future-content h2,
+    .about-closing h2 {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+    }
+
+    .about-philosophy {
+        padding: 100px 0;
+    }
+
+    .about-closing {
+        padding: 110px 0;
+    }
+
+}
+
+/* =========================
+   FLOWERS PAGE
+========================= */
+
+.flowers-hero {
+    padding-bottom: 120px;
+}
+
+
+/* INTRO */
+
+.flowers-intro {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.flowers-intro-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 80px;
+}
+
+.flowers-intro-content {
+    max-width: 720px;
+}
+
+.flowers-intro-content h2,
+.flower-feature-info h2,
+.flowers-closing h2 {
+    margin: 0 0 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.flowers-intro-content h2 em,
+.flower-feature-info h2 em,
+.flowers-closing h2 em {
+    font-style: italic;
+}
+
+.flowers-intro-content p {
+    max-width: 650px;
+    margin: 0 0 22px;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+
+/* FEATURE */
+
+.flower-feature-page {
+    padding: 120px 0;
+}
+
+.flower-feature-image {
+    width: 100%;
+    margin-bottom: 55px;
+}
+
+.flower-feature-image .flower-placeholder {
+    min-height: 620px;
+}
+
+.flower-feature-info {
+    max-width: 680px;
+    margin-left: auto;
+}
+
+.flower-feature-info .eyebrow {
+    margin-bottom: 25px;
+}
+
+.flower-feature-info p:last-child {
+    max-width: 560px;
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+
+/* FLOWER NOTES */
+
+.flower-notes {
+    padding: 120px 0;
+    background: var(--surface);
+}
+
+.flower-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.flower-note {
+    min-height: 280px;
+    padding: 45px 35px;
+    border-right: 1px solid var(--border);
+}
+
+.flower-note:last-child {
+    border-right: none;
+}
+
+.flower-note-number {
+    margin-bottom: 55px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.flower-note h3 {
+    margin: 0 0 18px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.flower-note p {
+    max-width: 300px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* CLOSING */
+
+.flowers-closing {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.flowers-closing h2 {
+    max-width: 850px;
+    margin: 0 auto 40px;
+}
+
+.flowers-closing .text-link {
+    display: inline-flex;
+}
+
+
+/* FLOWERS MOBILE */
+
+@media (max-width: 800px) {
+
+    .flowers-intro,
+    .flower-feature-page,
+    .flower-notes {
+        padding: 90px 0;
+    }
+
+    .flowers-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .flower-feature-image .flower-placeholder {
+        min-height: 430px;
+    }
+
+    .flower-feature-info {
+        margin-left: 0;
+    }
+
+    .flower-notes-grid {
+        grid-template-columns: 1fr;
+        margin-top: 55px;
+    }
+
+    .flower-note {
+        min-height: auto;
+        padding: 35px 25px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .flower-note:last-child {
+        border-bottom: none;
+    }
+
+    .flower-note-number {
+        margin-bottom: 35px;
+    }
+
+    .flowers-closing {
+        padding: 110px 0;
+    }
+
+}
+
+/* =========================
+   JOURNAL PAGE
+========================= */
+
+.journal-featured {
+    padding: 120px 0;
+}
+
+.journal-featured-image {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.journal-placeholder {
+    min-height: 620px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 40px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.journal-placeholder span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--text-muted);
+}
+
+.journal-featured-content {
+    max-width: 720px;
+    margin-left: auto;
+}
+
+.journal-meta {
+    margin: 0 0 22px;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.journal-featured-content h2 {
+    margin: 0 0 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.journal-featured-content h2 em {
+    font-style: italic;
+}
+
+.journal-featured-content > p:not(.journal-meta) {
+    max-width: 620px;
+    margin: 0 0 22px;
+    color: var(--text-muted);
+    line-height: 1.9;
+}
+
+.journal-featured-content .text-link {
+    margin-top: 18px;
+}
+
+
+/* STORIES */
+
+.journal-stories {
+    padding: 120px 0;
+    background: var(--surface);
+}
+
+.journal-list {
+    margin-top: 80px;
+    border-top: 1px solid var(--border);
+}
+
+.journal-item {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    padding: 55px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.journal-item-image {
+    min-height: 220px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 25px;
+    background: var(--background);
+    border: 1px solid var(--border);
+}
+
+.journal-item-image span {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3rem;
+    color: var(--text-muted);
+}
+
+.journal-item-content {
+    max-width: 650px;
+}
+
+.journal-item-content h3 {
+    margin: 0 0 20px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.journal-item-content > p:not(.journal-meta) {
+    max-width: 560px;
+    margin: 0 0 25px;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+
+/* CLOSING */
+
+.journal-closing {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.journal-closing h2 {
+    max-width: 850px;
+    margin: 0 auto;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+}
+
+.journal-closing h2 em {
+    font-style: italic;
+}
+
+
+/* JOURNAL MOBILE */
+
+@media (max-width: 800px) {
+
+    .journal-featured,
+    .journal-stories {
+        padding: 90px 0;
+    }
+
+    .journal-placeholder {
+        min-height: 420px;
+        padding: 25px;
+    }
+
+    .journal-placeholder span {
+        font-size: 4rem;
+    }
+
+    .journal-featured-content {
+        margin-left: 0;
+    }
+
+    .journal-item {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 40px 0;
+    }
+
+    .journal-item-image {
+        min-height: 250px;
+    }
+
+    .journal-closing {
+        padding: 110px 0;
+    }
+
+}

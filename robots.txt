@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lourdes.my.id/sitemap.xml
