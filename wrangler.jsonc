@@ -1,4 +1,12 @@
 
+"d1_databases": [
+  {
+    "binding": "LOURDES_DB",
+    "database_name": "lourdes-cms-db",
+    "database_id": "GANTI_DENGAN_DATABASE_ID_KAMU"
+  }
+]
+
 {
   "$schema": "https://developers.cloudflare.com/workers/wrangler-schema.json",
   "name": "lourdes-my-id",
