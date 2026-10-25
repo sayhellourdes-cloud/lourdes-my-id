@@ -1,12 +1,4 @@
 
-"d1_databases": [
-  {
-    "binding": "LOURDES_DB",
-    "database_name": "lourdes-cms-db",
-    "database_id": "ded288ae-b3f0-49f5-b701-00f6900d1579"
-  }
-]
-
 {
   "$schema": "https://developers.cloudflare.com/workers/wrangler-schema.json",
   "name": "lourdes-my-id",
@@ -16,5 +8,12 @@
     "directory": ".",
     "binding": "ASSETS",
     "run_worker_first": ["/api/*"]
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "LOURDES_DB",
+      "database_name": "lourdes-cms-db",
+      "database_id": "ded288ae-b3f0-49f5-b701-00f6900d1579"
+    }
+  ]
 }
