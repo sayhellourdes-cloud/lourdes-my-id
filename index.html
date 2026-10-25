@@ -345,6 +345,88 @@
 
     
 <script src="site.js"></script>
+    
+<script>
+async function loadLourdesArticles() {
+    const grid = document.getElementById("journalGrid");
+
+    try {
+        const response = await fetch("/api/articles");
+
+        if (!response.ok) {
+            throw new Error("Gagal mengambil artikel");
+        }
+
+        const data = await response.json();
+        const articles = data.articles || [];
+
+        grid.replaceChildren();
+
+        if (articles.length === 0) {
+            const message = document.createElement("p");
+            message.className = "journal-loading";
+            message.textContent =
+                "Cerita pertama Lourdes akan segera hadir.";
+            grid.appendChild(message);
+            return;
+        }
+
+        articles.forEach((article, index) => {
+            const card = document.createElement("article");
+            card.className = "journal-card";
+
+            const cover = document.createElement("div");
+            cover.className = "journal-image";
+
+            if (article.cover_image) {
+                cover.style.backgroundImage =
+                    `url("${article.cover_image}")`;
+                cover.style.backgroundSize = "cover";
+                cover.style.backgroundPosition = "center";
+            }
+
+            const number = document.createElement("span");
+            number.textContent = String(index + 1).padStart(2, "0");
+            cover.appendChild(number);
+
+            const info = document.createElement("div");
+            info.className = "journal-info";
+
+            const meta = document.createElement("p");
+            meta.className = "journal-meta";
+            meta.textContent = "LOURDES JOURNAL";
+
+            const title = document.createElement("h3");
+            title.textContent = article.title;
+
+            const excerpt = document.createElement("p");
+            excerpt.textContent = article.excerpt || "";
+
+            const link = document.createElement("a");
+            link.href = "pages/journal.html?slug=" +
+                encodeURIComponent(article.slug);
+            link.textContent = "Read story →";
+
+            info.append(meta, title, excerpt, link);
+            card.append(cover, info);
+            grid.appendChild(card);
+        });
+    } catch (error) {
+        grid.replaceChildren();
+
+        const message = document.createElement("p");
+        message.className = "journal-loading";
+        message.textContent =
+            "Cerita belum dapat dimuat. Silakan coba kembali nanti.";
+
+        grid.appendChild(message);
+        console.error("Lourdes articles:", error);
+    }
+}
+
+loadLourdesArticles();
+</script>
+
 
 <script>
 async function loadLourdesArticles() {
