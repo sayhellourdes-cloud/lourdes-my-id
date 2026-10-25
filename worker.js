@@ -31,6 +31,47 @@ export default {
       }
     }
 
+    if (url.pathname === "/api/articles") {
+      if (request.method !== "GET") {
+        return Response.json(
+          { ok: false, message: "Method not allowed" },
+          {
+            status: 405,
+            headers: { Allow: "GET" }
+          }
+        );
+      }
+
+      try {
+        const result = await env.LOURDES_DB
+          .prepare(`
+            SELECT
+              id,
+              title,
+              slug,
+              excerpt,
+              cover_image,
+              seo_title,
+              seo_description,
+              published_at
+            FROM articles
+            WHERE status = 'published'
+            ORDER BY published_at DESC
+          `)
+          .all();
+
+        return Response.json({
+          ok: true,
+          articles: result.results
+        });
+      } catch (error) {
+        return Response.json({
+          ok: false,
+          message: "Failed to fetch articles"
+        }, { status: 500 });
+      }
+    }
+
     return env.ASSETS.fetch(request);
   }
 };
