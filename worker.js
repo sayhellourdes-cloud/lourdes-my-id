@@ -31,6 +31,68 @@ export default {
       }
     }
 
+    if (url.pathname.startsWith("/api/articles/")) {
+      if (request.method !== "GET") {
+        return Response.json(
+          { ok: false, message: "Method not allowed" },
+          {
+            status: 405,
+            headers: { Allow: "GET" }
+          }
+        );
+      }
+
+      try {
+        const slug = decodeURIComponent(
+          url.pathname.slice("/api/articles/".length)
+        );
+
+        if (!slug || slug.includes("/")) {
+          return Response.json(
+            { ok: false, message: "Article not found" },
+            { status: 404 }
+          );
+        }
+
+        const article = await env.LOURDES_DB
+          .prepare(`
+            SELECT
+              id,
+              title,
+              slug,
+              excerpt,
+              content,
+              cover_image,
+              seo_title,
+              seo_description,
+              published_at
+            FROM articles
+            WHERE slug = ?
+              AND status = 'published'
+            LIMIT 1
+          `)
+          .bind(slug)
+          .first();
+
+        if (!article) {
+          return Response.json(
+            { ok: false, message: "Article not found" },
+            { status: 404 }
+          );
+        }
+
+        return Response.json({
+          ok: true,
+          article
+        });
+      } catch (error) {
+        return Response.json(
+          { ok: false, message: "Failed to fetch article" },
+          { status: 500 }
+        );
+      }
+    }
+
     if (url.pathname === "/api/articles") {
       if (request.method !== "GET") {
         return Response.json(
