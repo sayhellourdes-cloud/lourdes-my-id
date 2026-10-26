@@ -287,8 +287,14 @@ export default {
       }
 
       if (!(await validSession(request, env))) {
-        return redirect(new URL("/admin/login", url).href, 303);
-      }
+  // URL utama admin menampilkan login secara langsung.
+  if (path === "/admin" || path === "/admin/") {
+    return loginPage();
+  }
+
+  // Halaman admin lainnya kembali ke pintu masuk.
+  return redirect(new URL("/admin", url).href, 303);
+}
 
       const assetUrl = new URL(url);
       if (path === "/admin" || path === "/admin/") {
