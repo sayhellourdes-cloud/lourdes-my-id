@@ -4,11 +4,17 @@
   "name": "lourdes-my-id",
   "main": "worker.js",
   "compatibility_date": "2026-10-25",
-  "assets": {
-    "directory": ".",
-    "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
-  },
+  
+"assets": {
+  "directory": ".",
+  "binding": "ASSETS",
+  "run_worker_first": [
+    "/api/*",
+    "/admin",
+    "/admin/*"
+  ]
+},
+
   "d1_databases": [
     {
       "binding": "LOURDES_DB",
