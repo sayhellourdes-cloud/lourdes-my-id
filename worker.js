@@ -162,9 +162,31 @@ autocomplete="current-password" required autofocus>
   });
 }
 
+
 function sameOriginPost(request, url) {
-  return request.headers.get("Origin") === url.origin;
+  const origin = request.headers.get("Origin");
+
+  if (origin) {
+    try {
+      return new URL(origin).origin === url.origin;
+    } catch {
+      return false;
+    }
+  }
+
+  const referer = request.headers.get("Referer");
+
+  if (!referer) {
+    return false;
+  }
+
+  try {
+    return new URL(referer).origin === url.origin;
+  } catch {
+    return false;
+  }
 }
+
 
 export default {
   async fetch(request, env) {
