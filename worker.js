@@ -281,9 +281,25 @@ export default {
         );
       }
 
-      if (!sameOriginPost(request, url)) {
-        return json({ ok: false, message: "Invalid request origin" }, 403);
-      }
+      
+if (!sameOriginPost(request, url)) {
+  const origin = request.headers.get("Origin");
+  const referer = request.headers.get("Referer");
+
+  let refererOrigin = null;
+  try {
+    if (referer) refererOrigin = new URL(referer).origin;
+  } catch {}
+
+  return json({
+    ok: false,
+    message: "Login origin diagnostic",
+    requestOrigin: url.origin,
+    receivedOrigin: origin,
+    refererOrigin: refererOrigin
+  }, 403);
+}
+
 
       if (!(await validSession(request, env))) {
         return redirect(new URL("/admin/login", url).href, 303, {
